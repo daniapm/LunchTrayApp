@@ -45,8 +45,8 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["salad"].name}'
-                    android:checked='@{viewModel.entree.equals(viewModel.menuItems["salad"].name)}'
-                    android:onClick='@{()-> viewModel.setSide(viewModel.menuItems["salad"].name)}'
+                    android:checked='@{viewModel.entree.equals(viewModel.menuItems["salad"])}'
+                    android:onClick='@{()-> viewModel.setSide("salad")}'
                     tools:text="Side 1" />
 
                 <TextView
@@ -77,8 +77,8 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["soup"].name}'
-                    android:checked='@{viewModel.entree.equals(viewModel.menuItems["soup"].name)}'
-                    android:onClick='@{()-> viewModel.setSide(viewModel.menuItems["soup"].name)}'
+                    android:checked='@{viewModel.entree.equals(viewModel.menuItems["soup"])}'
+                    android:onClick='@{()-> viewModel.setSide("soup")}'
                     tools:text="Side 2" />
 
                 <TextView
@@ -110,8 +110,8 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["potatoes"].name}'
-                    android:checked='@{viewModel.entree.equals(viewModel.menuItems["potatoes"].name)}'
-                    android:onClick='@{()-> viewModel.setSide(viewModel.menuItems["potatoes"].name)}'
+                    android:checked='@{viewModel.entree.equals(viewModel.menuItems["potatoes"])}'
+                    android:onClick='@{()-> viewModel.setSide("potatoes")}'
                     tools:text="Side 3" />
 
                 <TextView
@@ -142,8 +142,8 @@
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceBody1"
                     android:text='@{viewModel.menuItems["rice"].name}'
-                    android:checked='@{viewModel.entree.equals(viewModel.menuItems["rice"].name)}'
-                    android:onClick='@{()-> viewModel.setSide(viewModel.menuItems["rice"].name)}'
+                    android:checked='@{viewModel.entree.equals(viewModel.menuItems["rice"])}'
+                    android:onClick='@{()-> viewModel.setSide("rice")}'
                     tools:text="Side 4" />
 
                 <TextView
