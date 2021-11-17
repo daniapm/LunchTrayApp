@@ -1,24 +1,11 @@
-/*
- * Copyright (C) 2021 The Android Open Source Project.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+
 package com.example.lunchtray.model
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.example.lunchtray.constants.ItemType
 import com.example.lunchtray.data.DataSource
 import java.text.NumberFormat
 
@@ -69,14 +56,7 @@ class OrderViewModel : ViewModel() {
      * Set the entree for the order.
      */
     fun setEntree(entree: String) {
-        // TODO: if _entree.value is not null, set the previous entree price to the current
-        //  entree price.
 
-        // TODO: if _subtotal.value is not null subtract the previous entree price from the current
-        //  subtotal value. This ensures that we only charge for the currently selected entree.
-
-        // TODO: set the current entree value to the menu item corresponding to the passed in string
-        // TODO: update the subtotal to reflect the price of the selected entree.
     }
 
     /**
@@ -86,10 +66,11 @@ class OrderViewModel : ViewModel() {
         // TODO: if _side.value is not null, set the previous side price to the current side price.
 
         // TODO: if _subtotal.value is not null subtract the previous side price from the current
-        //  subtotal value. This ensures that we only charge for the currently selected side.
+
+        // TODO: update the subtotal to reflect the price of the selected side.
 
         // TODO: set the current side value to the menu item corresponding to the passed in string
-        // TODO: update the subtotal to reflect the price of the selected side.
+
     }
 
     /**
@@ -106,6 +87,8 @@ class OrderViewModel : ViewModel() {
         // TODO: set the current accompaniment value to the menu item corresponding to the passed in
         //  string
         // TODO: update the subtotal to reflect the price of the selected accompaniment.
+
+
     }
 
     /**
@@ -114,9 +97,16 @@ class OrderViewModel : ViewModel() {
     private fun updateSubtotal(itemPrice: Double) {
         // TODO: if _subtotal.value is not null, update it to reflect the price of the recently
         //  added item.
+        if (_subtotal.value != null){
+            var subtotal = _subtotal.value
+                subtotal!!.plus(itemPrice)
+            }
         //  Otherwise, set _subtotal.value to equal the price of the item.
-
+        else {
+           _subtotal.setValue(itemPrice)
+        }
         // TODO: calculate the tax and resulting total
+        calculateTaxAndTotal()
     }
 
     /**
@@ -124,7 +114,10 @@ class OrderViewModel : ViewModel() {
      */
     fun calculateTaxAndTotal() {
         // TODO: set _tax.value based on the subtotal and the tax rate.
+        val tarifa = taxRate * _subtotal.value!!
+        _tax.setValue(tarifa)
         // TODO: set the total based on the subtotal and _tax.value.
+        _total.setValue(_subtotal.value!! + _tax.value!!)
     }
 
     /**
@@ -132,5 +125,19 @@ class OrderViewModel : ViewModel() {
      */
     fun resetOrder() {
         // TODO: Reset all values associated with an order
+        _entree.value = null
+        _side.value = null
+        _accompaniment.value = null
+        _subtotal.value = 0.0
+        _total.value = 0.0
+        _tax.value = 0.0
+
+
+
+
+
+
+
+
     }
 }
