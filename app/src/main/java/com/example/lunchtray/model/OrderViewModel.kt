@@ -77,8 +77,8 @@ class OrderViewModel : ViewModel() {
     fun setSide(side: String) {
         // TODO: if _side.value is not null, set the previous side price to the current side price.
         var filterdValuesMapSide = menuItems[side]
-        _entree.value = filterdValuesMapSide
-        _entree.value?.let {
+        _side.value = filterdValuesMapSide
+        _side.value?.let {
             previousSidePrice = it.price
         }
         // TODO: if _subtotal.value is not null subtract the previous side price from the current
@@ -96,16 +96,20 @@ class OrderViewModel : ViewModel() {
     fun setAccompaniment(accompaniment: String) {
         // TODO: if _accompaniment.value is not null, set the previous accompaniment price to the
         //  current accompaniment price.
-
+        var filterdValuesMapAccomp = menuItems[accompaniment]
+        _accompaniment.value = filterdValuesMapAccomp
         // TODO: if _accompaniment.value is not null subtract the previous accompaniment price from
         //  the current subtotal value. This ensures that we only charge for the currently selected
         //  accompaniment.
-
+        _accompaniment.value?.let {
+            previousAccompanimentPrice = it.price
+        }
         // TODO: set the current accompaniment value to the menu item corresponding to the passed in
         //  string
         // TODO: update the subtotal to reflect the price of the selected accompaniment.
-
-
+        filterdValuesMapAccomp?.let {
+            updateSubtotal(it.price)
+        }
     }
 
     /**
