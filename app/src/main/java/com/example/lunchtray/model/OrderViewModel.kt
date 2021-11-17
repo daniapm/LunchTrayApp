@@ -56,7 +56,19 @@ class OrderViewModel : ViewModel() {
      * Set the entree for the order.
      */
     fun setEntree(entree: String) {
-
+        // TODO: if _entree.value is not null, set the previous entree price to the current
+        //  entree price.
+        var filteredValuesMap = menuItems[entree]
+        _entree.value = filteredValuesMap
+        _entree.value?.let{
+            previousEntreePrice = it.price
+        }
+        // TODO: if _subtotal.value is not null subtract the previous entree price from the current
+        _subtotal.value = previousEntreePrice
+        // TODO: set the current entree value to the menu item corresponding to the passed in string
+        filteredValuesMap?.let {
+            updateSubtotal(it.price)
+        }
     }
 
     /**
