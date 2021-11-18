@@ -64,6 +64,14 @@ class CheckoutFragment : Fragment() {
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             // TODO: initialize the OrderViewModel and CheckoutFragment variables
+            viewModel = sharedViewModel
+            sharedViewModel.subtotal.value ?: 0
+            sharedViewModel.total.value ?: 0
+            sharedViewModel.tax.value ?: 0
+            sharedViewModel.entree.value
+            sharedViewModel.menuItems.values
+
+
             checkoutFragment = this@CheckoutFragment
         }
     }

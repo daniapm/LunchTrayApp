@@ -48,6 +48,12 @@
                     android:onClick='@{()-> viewModel.setAccompaniment("bread")}'
                     tools:text="Accompaniment 1" />
 
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="156dp"
+                    android:src="@drawable/acomp3" />
+
                 <TextView
                     android:id="@+id/bread_description"
                     style="@style/Widget.MenuItem.TextView.Info"
@@ -77,6 +83,12 @@
                     android:checked='@{viewModel.accompaniment.equals(viewModel.menuItems["berries"])}'
                     android:onClick='@{()-> viewModel.setAccompaniment("berries")}'
                     tools:text="Accompaniment 2" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="165dp"
+                    android:src="@drawable/acomp4" />
 
                 <TextView
                     android:id="@+id/berries_description"
@@ -112,6 +124,7 @@
                     tools:text="Accompaniment 3" />
 
                 <!-- TODO: set the text to the accompaniment description using the view model -->
+
                 <TextView
                     android:id="@+id/pickles_description"
                     style="@style/Widget.MenuItem.TextView.Info"
@@ -125,6 +138,12 @@
                     android:paddingTop="@dimen/base_margin"
                     android:text='@{viewModel.menuItems["pickles"].getFormattedPrice()}'
                     tools:text="$0.00" />
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="164dp"
+                    android:src="@drawable/acomp1" />
 
             </RadioGroup>
 

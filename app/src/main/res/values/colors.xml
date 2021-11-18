@@ -15,8 +15,8 @@
   ~ limitations under the License.
   -->
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
+    <color name="purple_200">#E45656</color>
+    <color name="purple_500">#DD3737</color>
+    <color name="purple_700">#ECD5D5</color>
     <color name="black">#FF000000</color>
 </resources>

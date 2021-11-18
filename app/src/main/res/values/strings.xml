@@ -15,4 +15,12 @@
     <string name="order_summary">Order Summary</string>
     <string name="submit">Submit Order</string>
     <string name="submit_order">Order Submitted!</string>
+    <string name="entre1">TODO</string>
+    <string name="logo">TODO</string>
+    <string name="app_start">Build your order!</string>
+    <string name="app_entre">Entre Menu</string>
+    <string name="app_side">Side Menu</string>
+    <string name="app_acomp">Acommpaniment Menu</string>
+    <string name="app_resume">Order summary</string>
+
 </resources>
